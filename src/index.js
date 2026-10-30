@@ -5,7 +5,7 @@ const historial = new ListaDobleNavegación();
 
 historial.insertar({id: 1, producto: 'tomate', feria: 'Feria Centro Comercial Loja', fecha: '2026-10-20'});
 historial.insertar({id: 2, producto: 'papa', feria: 'Feria de Las Pitas', fecha: '2026-10-21'});
-historial.insertar({id: 1, producto: 'cebolla', feria: 'Feria Orillas del Zamora', fecha: '2026-10-22'});
+historial.insertar({id: 3, producto: 'cebolla', feria: 'Feria Orillas del Zamora', fecha: '2026-10-22'});
 
 console.log('Historial cargando');
 console.log('Consultas guardadas', historial.longitud);
