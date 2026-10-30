@@ -1,0 +1,18 @@
+test('4. Eliminación de Nodo Intermedio: Reconexión correcta de punteros anterior y siguiente', () => {
+    lista.avanzar(); // Cursor en 102 ('Filtrar Datos B')
+    const exito = lista.eliminarActual();
+
+    assert.equal(exito, true);
+    assert.equal(lista.longitud, 2);
+    assert.equal(lista.obtenerActual().id, 103); // Cursor se reubica en el siguiente
+    assert.equal(lista.retroceder().id, 101); // Verifica que el enlace hacia el anterior se mantuvo intacto
+  });
+
+  test('5. Casos Límite: Manejo seguro sobre estructuras vacías', () => {
+    const listaVacia = new ListaDobleNavegacion();
+
+    assert.equal(listaVacia.obtenerActual(), null);
+    assert.equal(listaVacia.avanzar(), null);
+    assert.equal(listaVacia.retroceder(), null);
+    assert.equal(listaVacia.eliminarActual(), false);
+  });
