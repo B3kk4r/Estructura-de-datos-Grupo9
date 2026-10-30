@@ -1,4 +1,4 @@
-// Caso 2: ciclo A->B->C->A en un Map (CORREGIDO + verificación con WeakRef)
+
 class NodoGrafo {
   constructor(id) {
     this.id = id;
@@ -9,10 +9,10 @@ class NodoGrafo {
   }
 }
 
-// [MOD-C2-01] gestorCache se declara ANTES de usarse (evita depender del orden).
-const gestorCache = new Map(); // Map<string, NodoGrafo>: la clave es un string
 
-let refDebil; // [MOD-C2-02] WeakRef solo para comprobar que el GC lo libera
+const gestorCache = new Map(); 
+
+let refDebil; 
 
 function construirGrafoCiclico() {
   const nodoA = new NodoGrafo("A");
@@ -21,7 +21,7 @@ function construirGrafoCiclico() {
 
   nodoA.conectarCon(nodoB);
   nodoB.conectarCon(nodoC);
-  nodoC.conectarCon(nodoA); // ciclo
+  nodoC.conectarCon(nodoA); 
 
   gestorCache.set(nodoA.id, nodoA);
   refDebil = new WeakRef(nodoA);
@@ -40,7 +40,7 @@ const esperar = () => new Promise((r) => setTimeout(r, 0));
   await esperar(); global.gc();
   console.log("Tras delete + GC -> A sigue vivo:", refDebil.deref() !== undefined);
 
-  // WeakMap NO admite claves string:
+  
   try { new WeakMap().set("A", {}); }
   catch (e) { console.log("WeakMap con clave string ->", e.constructor.name + ":", e.message); }
 })();
