@@ -1,0 +1,15 @@
+{
+  "name": "abp-avance4-lista-doble",
+  "version": "1.0.0",
+  "description": "Avance 4 ABP - Lista doblemente enlazada de navegación (Estructura de Datos, UNL)",
+  "main": "src/index.js",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test tests/navegacion.test.js tests/navegacion.extra.test.js",
+    "test:oficial": "node --test tests/navegacion.test.js",
+    "test:cobertura": "node --test --experimental-test-coverage tests/navegacion.test.js tests/navegacion.extra.test.js"
+  }
+}

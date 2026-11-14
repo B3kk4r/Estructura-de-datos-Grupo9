@@ -1,0 +1,17 @@
+{
+  "name": "greenbst-scraping-agricola",
+  "version": "1.0.0",
+  "description": "Indexación jerárquica e inserción con GreenBST (AVL) para scraping agrícola de las ferias de Loja - Grupo 09",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "src/index.js",
+  "engines": { "node": ">=20.0.0" },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test",
+    "benchmark": "node --expose-gc src/benchmark/benchmark.js",
+    "benchmark:rapido": "node --expose-gc src/benchmark/benchmark.js --rapido",
+    "ingesta": "node src/benchmark/ingesta.js",
+    "memoria": "node --expose-gc src/benchmark/memoria.js"
+  }
+}
